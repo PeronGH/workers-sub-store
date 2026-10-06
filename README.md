@@ -36,4 +36,4 @@ curl 'https://sub-store.<account>.workers.dev/sub?url=https%3A%2F%2Fexample.com%
 
 ## License
 
-The deployed Worker bundles Sub-Store, which is licensed under AGPL-3.0.
+AGPL-3.0, like [Sub-Store](https://github.com/sub-store-org/Sub-Store), which the deployed Worker bundles. If you deploy a modified version, offer its source to users, as the page footer does.
