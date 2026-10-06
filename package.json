@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "postinstall": "pnpm --dir Sub-Store/backend install --frozen-lockfile --ignore-scripts",
+    "postinstall": "git submodule update --init --depth 1 && cd Sub-Store/backend && pnpm install --frozen-lockfile --ignore-scripts",
     "build:core": "node scripts/build-core.mjs",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy"
