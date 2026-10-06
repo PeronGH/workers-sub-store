@@ -30,7 +30,7 @@ Input can be a Clash/mihomo YAML, a base64 or plain list of URIs, Surge/Loon/QX 
 ## Example
 
 ```sh
-curl 'https://workers-sub-store.<account>.workers.dev/?url=https%3A%2F%2Fexample.com%2Fsub&target=sing-box'
+curl 'https://sub-store.<account>.workers.dev/?url=https%3A%2F%2Fexample.com%2Fsub&target=sing-box'
 ```
 
 ## License
