@@ -24,6 +24,7 @@ GET /sub?url=<subscription>&target=<platform>
 | `url` | Subscription URL. Repeat it, or separate URLs with newlines, to merge several. |
 | `target` | Output format: `ClashMeta`, `Clash`, `Stash`, `Surge`, `SurgeMac`, `Surfboard`, `Loon`, `QX`, `Shadowrocket`, `Egern`, `sing-box`, `URI`, `V2Ray`, `JSON` |
 | `ua` | User-Agent for fetching subscriptions. Default: `clash.meta/v1.19.23` |
+| `template` | URL of a Clash/mihomo/Stash config. Its `proxies` are replaced with the converted ones; proxy groups select them with `include-all-proxies` (mihomo) or `include-all` (Stash) and `filter`. |
 
 Input can be a Clash/mihomo YAML, a base64 or plain list of URIs, Surge/Loon/QX proxy lines or full configs, SSD, or an HTML-wrapped subscription.
 

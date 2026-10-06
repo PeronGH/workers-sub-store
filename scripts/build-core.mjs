@@ -61,7 +61,7 @@ const peggy = { generate: () => __peggy.exports };`,
 
 await build({
     absWorkingDir: backend,
-    entryPoints: ['src/products/proxy-utils.esm.js'],
+    entryPoints: [path.join(root, 'scripts/core-entry.js')],
     outfile,
     bundle: true,
     minify: true,
