@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light dark" />
+        <title>Sub-Store</title>
+        <link rel="stylesheet" href="/pico.classless.min.css" />
+    </head>
+    <body>
+        <main>
+            <h1>Sub-Store</h1>
+            <p>Convert proxy subscriptions between formats. The address of the result page is your converted subscription link.</p>
+            <form action="/" method="get">
+                <label>
+                    Subscription URLs, one per line
+                    <textarea name="url" rows="3" required placeholder="https://example.com/sub"></textarea>
+                </label>
+                <label>
+                    Target
+                    <select name="target" required>
+                        <option value="ClashMeta">Clash Meta / mihomo</option>
+                        <option value="Clash">Clash</option>
+                        <option value="Stash">Stash</option>
+                        <option value="Surge">Surge</option>
+                        <option value="SurgeMac">Surge for Mac</option>
+                        <option value="Surfboard">Surfboard</option>
+                        <option value="Loon">Loon</option>
+                        <option value="QX">Quantumult X</option>
+                        <option value="Shadowrocket">Shadowrocket</option>
+                        <option value="Egern">Egern</option>
+                        <option value="sing-box">sing-box</option>
+                        <option value="URI">URI</option>
+                        <option value="V2Ray">V2Ray</option>
+                        <option value="JSON">JSON</option>
+                    </select>
+                </label>
+                <label>
+                    User-Agent for fetching
+                    <input name="ua" placeholder="clash.meta/v1.19.23" />
+                </label>
+                <button type="submit">Convert</button>
+            </form>
+        </main>
+    </body>
+</html>

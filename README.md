@@ -13,7 +13,7 @@ pnpm dev      # local server
 pnpm deploy   # deploy to Cloudflare
 ```
 
-Wrangler rebuilds the core before each run.
+Wrangler rebuilds the core before each run. Opening `/` without parameters shows a form that builds the link below.
 
 ```
 GET /?url=<subscription>&target=<platform>
@@ -21,7 +21,7 @@ GET /?url=<subscription>&target=<platform>
 
 | Parameter | Description |
 | --- | --- |
-| `url` | Subscription URL. Repeat to merge several. |
+| `url` | Subscription URL. Repeat it, or separate URLs with newlines, to merge several. |
 | `target` | Output format: `ClashMeta`, `Clash`, `Stash`, `Surge`, `SurgeMac`, `Surfboard`, `Loon`, `QX`, `Shadowrocket`, `Egern`, `sing-box`, `URI`, `V2Ray`, `JSON` |
 | `ua` | User-Agent for fetching subscriptions. Default: `clash.meta/v1.19.23` |
 

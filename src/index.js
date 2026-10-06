@@ -7,10 +7,14 @@ const JSON_TARGETS = new Set(['json', 'JSON', 'singbox', 'sing-box']);
 const usage = 'Usage: /?url=<subscription>&target=<platform>[&url=...][&ua=<user-agent>]';
 
 export default {
-    async fetch(request) {
+    async fetch(request, env) {
         const { searchParams } = new URL(request.url);
-        const urls = searchParams.getAll('url');
+        // The form submits one textarea value with a URL per line.
+        const urls = searchParams.getAll('url').flatMap((value) => value.split(/\s+/).filter(Boolean));
         const target = searchParams.get('target');
+        if (urls.length === 0 && !target) {
+            return env.ASSETS.fetch(request);
+        }
         if (urls.length === 0 || !target) {
             return new Response(usage, { status: 400 });
         }
