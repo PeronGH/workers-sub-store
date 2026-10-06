@@ -13,10 +13,10 @@ pnpm dev      # local server
 pnpm deploy   # deploy to Cloudflare
 ```
 
-Wrangler rebuilds the core before each run. Opening `/` without parameters shows a form that builds the link below.
+Wrangler rebuilds the core before each run. `/` serves a form that builds the link below.
 
 ```
-GET /?url=<subscription>&target=<platform>
+GET /sub?url=<subscription>&target=<platform>
 ```
 
 | Parameter | Description |
@@ -30,7 +30,7 @@ Input can be a Clash/mihomo YAML, a base64 or plain list of URIs, Surge/Loon/QX 
 ## Example
 
 ```sh
-curl 'https://sub-store.<account>.workers.dev/?url=https%3A%2F%2Fexample.com%2Fsub&target=sing-box'
+curl 'https://sub-store.<account>.workers.dev/sub?url=https%3A%2F%2Fexample.com%2Fsub&target=sing-box'
 ```
 
 ## License

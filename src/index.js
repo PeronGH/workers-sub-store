@@ -4,17 +4,18 @@ import { parse, produce } from '../gen/sub-store-core.mjs';
 const DEFAULT_USER_AGENT = 'clash.meta/v1.19.23';
 const JSON_TARGETS = new Set(['json', 'JSON', 'singbox', 'sing-box']);
 
-const usage = 'Usage: /?url=<subscription>&target=<platform>[&url=...][&ua=<user-agent>]';
+const usage = 'Usage: /sub?url=<subscription>&target=<platform>[&url=...][&ua=<user-agent>]';
 
+// Static assets are served without invoking the Worker; it only sees requests no asset matched.
 export default {
-    async fetch(request, env) {
-        const { searchParams } = new URL(request.url);
+    async fetch(request) {
+        const { pathname, searchParams } = new URL(request.url);
+        if (pathname !== '/sub') {
+            return new Response('Not Found', { status: 404 });
+        }
         // The form submits one textarea value with a URL per line.
         const urls = searchParams.getAll('url').flatMap((value) => value.split(/\s+/).filter(Boolean));
         const target = searchParams.get('target');
-        if (urls.length === 0 && !target) {
-            return env.ASSETS.fetch(request);
-        }
         if (urls.length === 0 || !target) {
             return new Response(usage, { status: 400 });
         }

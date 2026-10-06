@@ -8,9 +8,6 @@
     "watch_dir": "scripts"
   },
   "assets": {
-    "directory": "public",
-    "binding": "ASSETS",
-    // Asset matching ignores the query string, so `/?url=...` must reach the Worker first.
-    "run_worker_first": ["/"]
+    "directory": "public"
   }
 }
